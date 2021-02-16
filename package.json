@@ -1,7 +1,7 @@
 {
   "name": "criteo-api",
-  "version": "2020.10.1",
-  "description": "A NodeJS Client For Criteo MAPI Requests",
+  "version": "2020.10.2",
+  "description": "A NodeJS Client For Criteo API Requests",
   "main": "./lib/criteo_api.js",
   "directories": {
     "lib": "lib"
@@ -16,12 +16,12 @@
     "jsdoc": "^3.6.6"
   },
   "scripts": {
-    "test": "jest -i",
+    "test": "jest -i --verbose",
     "create-docs": "jsdoc lib/criteo_api.js -d docs"
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/joepikowski/criteo-api-nodejs-client"
   },
   "keywords": [
     "criteo"
