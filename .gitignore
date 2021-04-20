@@ -1,0 +1,18 @@
+# build output
+dist
+
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+
+#ide
+.idea
+
+.DS_Store
+
+src/test-data/
+
+docs
