@@ -1,8 +1,9 @@
 {
-  "name": "criteo-api",
-  "version": "2021.01.3",
+  "name": "criteo-api-retail",
+  "version": "2021.04.18.2",
   "description": "A NodeJS Client For Criteo API Requests",
   "main": "./lib/criteo_api.js",
+  "typings": "./lib/criteo-api-retail.d.ts",
   "directories": {
     "lib": "lib"
   },
@@ -22,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joepikowski/criteo-api-nodejs-client"
+    "url": "https://github.com/djnesmith/criteo-api-nodejs-client"
   },
   "keywords": [
     "criteo"
