@@ -13,26 +13,29 @@ interface PageInfo {
     pageSize: number
 }
 
-interface AccountsResponse {
-    data: [
-        {
-            id: string,
-            type: string,
-            attributes: {
-                name: string
-                type: string,
-                subtype: string
-                countries: [
-                    string
-                ],
-                currency: string,
-                parentAccountLabel: string,
-                timeZone: string
-            }
-        }
-    ],
-    metadata: MetaData
+interface Response<T> {
+  data: T;
 }
+
+interface PagedResponse<T> extends Response<T> {
+  metadata: MetaData;
+}
+
+interface AccountData {
+  id: string,
+  type: string,
+  attributes: {
+    name: string;
+    type: string;
+    subtype: string;
+    countries: string[];
+    currency: string;
+    parentAccountLabel: string;
+    timeZone: string;
+  }
+}
+  
+type AccountsResponse = PagedResponse<AccountData[]>
 
 interface CampaignAttributes {
     accountId: string,
@@ -169,4 +172,3 @@ declare class Criteo_API {
 
     getReportOutput(reportId: string, filepath?: string, callback?: (err: any, res: any) => void): Promise<ReportStatusResponse | undefined>;
 }
-
