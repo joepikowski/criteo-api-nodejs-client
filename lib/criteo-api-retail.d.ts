@@ -121,21 +121,21 @@ interface ReportQuery {
     format: "json-compact" | "json-newline" | "json" | "csv"
 }
 
-interface ReportStatusResponse {
-    data: {
-        type: "RetailMediaReportStatus",
-        id: string,
-        attributes: {
-            status: "pending" | "success" | "failure" | "expired"
-            rowCount: number,
-            fileSizeBytes: number,
-            md5Checksum: string,
-            createdAt: string,
-            expiresAt: string,
-            message: string | null
-        }
-    }
+interface ReportStatus 
+  type: "RetailMediaReportStatus";
+  id: string;
+  attributes: {
+    status: "pending" | "success" | "failure" | "expired";
+    rowCount: number;
+    fileSizeBytes: number;
+    md5Checksum: string;
+    createdAt: string;
+    expiresAt: string;
+    message: string | null;
+  }
 }
+
+type ReportStatusResponse = Response<ReportStatus>;
 
 declare class Criteo_API {
     constructor(key: string, secret: string);
