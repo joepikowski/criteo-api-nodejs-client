@@ -59,22 +59,14 @@ type CreateCampaign = RequireOnly<CampaignAttributes, "name">;
 
 type UpdateCampaign = RequireOnly<CampaignAttributes, "name" | "budget" | "clickAttributionWindow" | "viewAttributionWindow">
 
-interface CampaignResponse {
-    data: {
-        id: string,
-        type: "RetailMediaCampaign",
-        attributes: CampaignAttributes
-    }
+interface CampaignData {
+  id: string,
+  type: "RetailMediaCampaign",
+  attributes: CampaignAttributes
 }
 
-interface CampaignsResponse {
-    data: [{
-        id: string,
-        type: "RetailMediaCampaign",
-        attributes: CampaignAttributes
-    }],
-    metadata: MetaData
-}
+type CampaignResponse = Response<CampaignData>;
+type CampaignsResponse = PagedResponse<CampaignData[]>;
 
 interface LineItemAttributes {
     campaignId: string,
