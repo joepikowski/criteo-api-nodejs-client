@@ -13,11 +13,11 @@ interface PageInfo {
     pageSize: number
 }
 
-interface Response<T> {
+interface DataResponse<T> {
   data: T;
 }
 
-interface PagedResponse<T> extends Response<T> {
+interface PagedResponse<T> extends DataResponse<T> {
   metadata: MetaData;
 }
 
@@ -65,7 +65,7 @@ interface CampaignData {
   attributes: CampaignAttributes
 }
 
-type CampaignResponse = Response<CampaignData>;
+type CampaignResponse = DataResponse<CampaignData>;
 type CampaignsResponse = PagedResponse<CampaignData[]>;
 
 interface LineItemAttributes {
@@ -99,7 +99,7 @@ interface LineItemData {
 }
  
 type LineItemsResponse = PagedResponse<LineItemData[]>;
-type LineItemResponse = Response<LineItemData>;
+type LineItemResponse = DataResponse<LineItemData>;
 
 interface ReportQuery {
     reportType: "summary" | "pageType" | "keyword" | "productCategory" | "product" | "attributedTransactions",
@@ -112,7 +112,7 @@ interface ReportQuery {
     format: "json-compact" | "json-newline" | "json" | "csv"
 }
 
-interface ReportStatus 
+interface ReportStatus {
   type: "RetailMediaReportStatus";
   id: string;
   attributes: {
@@ -126,7 +126,7 @@ interface ReportStatus
   }
 }
 
-type ReportStatusResponse = Response<ReportStatus>;
+type ReportStatusResponse = DataResponse<ReportStatus>;
 
 declare class Criteo_API {
     constructor(key: string, secret: string);
@@ -149,7 +149,7 @@ declare class Criteo_API {
 
     updateLineItemById(lineItemId: string, lineItemData: UpdateLineItem, callback?: (err: any, res: any) => void): Promise<LineItemResponse | undefined>;
 
-    getReport(reportType: "campaigns" | "line-items", query: ReportQuery, callback?: (err: any, res: any) => void): Promise<ReportStatusResponse | undefined>;
+    getReport(reportType: "campaigns" | "line-items", query: ReportQuery, callback?: (err: any, res: any) => void): Promise<ReportStatusResponse | undefined | any>;
 
     getReportStatus(reportId: string, callback?: (err: any, res: any) => void): Promise<ReportStatusResponse | undefined>;
 
