@@ -92,23 +92,14 @@ type CreateLineItem = RequireOnly<LineItemAttributes, "name" | "targetRetailerId
 
 type UpdateLineItem = RequireOnly<LineItemAttributes, "name" | "startDate" | "endDate" | "budget" | "monthlyPacing" | "dailyPacing" | "isAutoDailyPacing" | "bidStrategy" | "targetBid" | "maxBid" | "status">
 
-interface LineItemResponse {
-    data: {
-        id: string,
-        type: "RetailMediaLineItem",
-        attributes: LineItemAttributes
-    },
-    metadata: MetaData
+interface LineItemData {
+   id: string;
+   type: "RetailMediaLineItem";
+   attributes: LineItemAttributes;
 }
-
-interface LineItemsResponse {
-    data: [{
-        id: string,
-        type: "RetailMediaLineItem",
-        attributes: LineItemAttributes
-    }],
-    metadata: MetaData
-}
+ 
+type LineItemsResponse = PagedResponse<LineItemData[]>;
+type LineItemResponse = Response<LineItemData>;
 
 interface ReportQuery {
     reportType: "summary" | "pageType" | "keyword" | "productCategory" | "product" | "attributedTransactions",
