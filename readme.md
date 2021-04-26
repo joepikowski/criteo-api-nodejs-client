@@ -9,13 +9,13 @@
 
 ### Installation
 
-`$ npm install criteo-api`
+`$ npm install --save criteo-api-retail`
 
 ### Basic Code Examples　
 
 ##### Initialization
 ``` js
-const Criteo_API = require( 'criteo-api' );
+const Criteo_API = require( 'criteo-api-retail' );
 
 const criteo = new Criteo_API( 'key', 'secret' );
 ```
