@@ -1,5 +1,5 @@
 {
-  "name": "pmg-criteo-api",
+  "name": "@agencypmg/pmg-criteo-api",
   "version": "1.0.0",
   "description": "A NodeJS Client For Criteo API Requests",
   "main": "./lib/criteo_api.js",
