@@ -1,6 +1,6 @@
 {
-  "name": "criteo-api",
-  "version": "2021.01.3",
+  "name": "@agencypmg/pmg-criteo-api",
+  "version": "1.0.0",
   "description": "A NodeJS Client For Criteo API Requests",
   "main": "./lib/criteo_api.js",
   "directories": {
@@ -22,15 +22,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/joepikowski/criteo-api-nodejs-client"
+    "url": "git+https://github.com/joepikowski/criteo-api-nodejs-client.git"
   },
   "keywords": [
     "criteo"
   ],
-  "author": {
-    "name": "Joe Pikowski",
-    "email": "j.pikowski@criteo.com",
-    "url": "https://developers.criteo.com"
+  "author": "E. A. Wooten <evan@pmg.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AgencyPMG/pmg-criteo-api/issues"
   },
-  "license": "MIT"
+  "homepage": "https://github.com/AgencyPMG/pmg-criteo-api#readme"
 }
